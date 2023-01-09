@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My todo element</title>
+  </head>
+  <body>
+    <button onclick="ChangeTextButton()" id="todo-button">Press me</button>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <button id="increase">Up</button>
+    <button id="decrease">Down</button>
+    <div id="counter">0</div>
+    <input id="textbox" type="text" />
+    <button id="submit">Submit</button>
+    <div id="div"></div>
+
+    <div id="cart"></div>
+    <button id="apple">Apple</button>
+    <button id="tomato">Tomato</button>
+    <button id="eggs">Eggs</button>
+    <button id="clear">Clear</button>
+
+    <button id="convert-cm">Convert to cm</button>
+    <button id="convert-inch">Convert to inch</button>
+    <div id="result"></div>
+  </body>
+  <script>
+    // Exercise 6
+    // 1.
+    // 2.
+    // 3.
+    let length1 = 1.0;
+    let length2 = 2.0;
+    let length3 = 3.0;
+
+    let lengths = document.createElement("div");
+
+    lengths.innerHTML = length1;
+
+    lengths = Math.floor(length2 * 2.54);
+    console.log(lengths);
+
+    //Exercise 7
+    // 1.
+    let newArray = ["Nazurah", "Huda", "Jia", "Yi"];
+    newArray.push("Ji Hyo");
+
+    newArray.forEach(function (namaAweks) {
+      unsur = document.createElement("div");
+      unsur.innerText = namaAweks;
+      document.body.appendChild(unsur);
+    });
+
+    const upper = newArray.map(function (namaZaujah) {
+      return namaZaujah.toUpperCase();
+    });
+    console.log(upper);
+
+    //Exercise 8
+    //1.
+    function ChangeTextButton() {
+      document.getElementById("todo-button").innerText = "Done";
+    }
+    //2.
+    const incrementCount = document.getElementById("increase");
+    const decrementCount = document.getElementById("decrease");
+    const totalCount = document.getElementById("counter");
+
+    let counter = 0;
+    totalCount.innerHTML = counter;
+
+    const IncreaseCounter = () => {
+      counter++;
+      totalCount.innerHTML = counter;
+    };
+
+    const DecreaseCounter = () => {
+      counter--;
+      totalCount.innerHTML = counter;
+    };
+
+    incrementCount.addEventListener("click", IncreaseCounter);
+    decrementCount.addEventListener("click", DecreaseCounter);
+    //3.
+
+    //Exercise 9
+    //1.
+    const Apple = document.getElementById("apple");
+    const Tomato = document.getElementById("tomato");
+    const Eggs = document.getElementById("eggs");
+    const clear = document.getElementById("clear");
+
+    function FoodSelection() {}
+
+    //2.
+
+    const convertCm = document.getElementById("convert-cm").innerHTML;
+    const convertInch = document.getElementById("convert-inch").innerHTML;
+
+    //Exercise 10
+    //1.
+    const CartArray = [
+      {
+        name: "Watermelon",
+        price: 4,
+        quantity: 2,
+      },
+      {
+        name: "Orange",
+        price: 3,
+        quantity: 3,
+      },
+    ];
+
+    function CartTotal() {
+      const cartTotal = price.value * quantity.value;
+    }
+
+    //Exercise 11
+    //1.
+
+    let fruit = [
+      {
+        name: "Rambutan",
+        price: 3,
+      },
+      {
+        name: "Durian",
+        price: 4,
+      },
+      {
+        name: "Anggur",
+        price: 2,
+      },
+    ];
+
+    fruit.forEach(function (fruity) {
+          const element = document.createElement('div');
+          element.innerText = fruity.name + ': ' + fruity.price;
+
+          const addButton = document.createElement('button');
+          addButton.innerText = 'Add';
+
+          document.body.appendChild(element);
+        })
+  </script>
+</html>
